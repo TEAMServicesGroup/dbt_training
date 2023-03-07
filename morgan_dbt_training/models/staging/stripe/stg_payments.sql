@@ -6,6 +6,6 @@ select
     paymentmethod AS payment_method,
     status,
     amount/100 AS amount,       --Converting cents to dollars
-    created AS created_at       --??? I think this is date_paid ???
+    created AS created_at       --Date/Time Loaded into Snowflake
 
 from {{ source('stripe', 'payment') }}
